@@ -1,0 +1,37 @@
+
+nav {
+	background-color: #0097a7;
+	color: #FFFFFF;
+	width: 100%;
+}
+
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+	float:none;
+}
+
+.question {
+	padding: 5%;
+	float: left;
+}
+
+.btn-bear{
+	background-color: #0097a7;
+	color: white;
+}
+
+.btn-fancy {
+	padding: 3%;
+	font-size: 30px;
+	margin-right: 10%;
+	margin-top: 5%;
+	float: right;
+}
+
+.question > * {
+	display: inline;
+}
