@@ -22,9 +22,14 @@ nav {
 .btn-bear{
 	background-color: #0097a7 !important;
 	float: right;
+	
+	color: white;
+	
+}
+
+.btn-fancy {
 	padding: 3%;
 	font-size: 30px;
-	color: white;
 	margin-right: 10%;
 	margin-top: 5%;
 }
