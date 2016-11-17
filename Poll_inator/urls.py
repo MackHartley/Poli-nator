@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from Poll_R_Bear import views as bear_views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^index/', bear_views.index, name='index'),
 ]
