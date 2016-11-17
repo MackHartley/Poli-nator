@@ -20,11 +20,8 @@ nav {
 }
 
 .btn-bear{
-	background-color: #0097a7 !important;
-	float: right;
-	
+	background-color: #0097a7;
 	color: white;
-	
 }
 
 .btn-fancy {
@@ -32,4 +29,9 @@ nav {
 	font-size: 30px;
 	margin-right: 10%;
 	margin-top: 5%;
+	float: right;
+}
+
+.question > * {
+	display: inline;
 }
