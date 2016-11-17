@@ -1,0 +1,19 @@
+
+nav {
+	background-color: #0097a7;
+	color: #FFFFFF;
+	width: 100%;
+}
+
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+	float:none;
+}
+
+.question {
+	padding: 5%;
+}
