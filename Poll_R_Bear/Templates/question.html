@@ -3,7 +3,7 @@
 	<meta charset="UTF-8">
 	<title>Poll R Bear</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/style.css' %}"/>
 </head>
 <body>
 	<nav class="navbar navbar-fixed">
@@ -15,36 +15,20 @@
 		</div>
 	</nav>
 	<h2 class="question-title">
-		Do you like this question?
+		{{ question }}
 	</h2>
 	<button type="button" class="btn btn-bear btn-fancy">
 		Add an Answer
 	</button>
 	<div class="answer-wrapper">
+		{% for answer in answers %}
 		<div class="answer">
-			<p>Answer</p>
+			<p>{{answer.text}}</p>
 			<img src="#" alt="">
 			<button class="btn btn-bear">Vote</button>
-			<p>8 votes</p>
+			<p>{{answer.upvotes}}</p>
 		</div>
-		<div class="answer">
-			<p>Answer</p>
-			<img src="#" alt="">
-			<button class="btn btn-bear">Vote</button>
-			<p>8 votes</p>
-		</div>
-		<div class="answer">
-			<p>Answer</p>
-			<img src="#" alt="">
-			<button class="btn btn-bear">Vote</button>
-			<p>8 votes</p>
-		</div>
-		<div class="answer">
-			<p>Answer</p>
-			<img src="#" alt="">
-			<button class="btn btn-bear">Vote</button>
-			<p>8 votes</p>
-		</div>
+    	{% endfor %} 
 	</div>
 </body>
 </html>

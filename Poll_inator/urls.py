@@ -23,4 +23,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', bear_views.index, name='index'),
+    url(r'^question/(?P<question_id>[0-9]+)$', bear_views.question, name="question"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

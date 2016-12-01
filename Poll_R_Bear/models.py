@@ -17,4 +17,4 @@ class Answer(models.Model):
 	#photo url field
 
 	def __str__(self):
-		return 'answer: %s, upvotes: %s, downvotes: %s' % (self.text, self.upvotes, self.downvotes)
+		return 'answer: %s, upvotes: %s' % (self.text, self.upvotes)
