@@ -21,4 +21,6 @@ from Poll_R_Bear import views as bear_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', bear_views.index, name='index'),
+    url(r'^add_question/', bear_views.add_question, name='add_question'),
+    url(r'^add_answer/', bear_views.add_answer, name='add_answer'),
 ]
