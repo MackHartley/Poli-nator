@@ -51,3 +51,7 @@ nav {
 .answer img {
 	display: block;
 }
+
+.question > * {
+	display: inline;
+}
