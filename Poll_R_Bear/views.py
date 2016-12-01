@@ -8,11 +8,12 @@ from .models import Question, Answer
 # Create your views here.
 def index(request):
 	questions = Question.objects.all()
-	answers = []
+	data = []
 	for q in questions:
-		answer = Answer.objects.filter(question = q).order_by('-upvotes')[:1]
-		answers.append(answer)
-	context = {'answers': answers}
+		answers = Answer.objects.filter(question = q).order_by('-upvotes')
+		new = {'question': q, 'answers': answers}
+		data.append(new)
+	context = {'data': data}
 	return render(request, 'index.html', context)
 
 def question(request, question_id):

@@ -17,13 +17,17 @@
 	</nav>
 	<div class="content">
 		<div class="questions-list">
-			{% for answer in answers %}
+			{% for item in data %}
 			<div class="question">
-				<p>{{answer.question}}</p>
+				<p>{{item.question.text}}</p>
+
+				{% for answer in item.answers %}
 				<p>{{answer.text}}</p>
 				<img src="#" alt="">
 				<p>{{answer.upvotes}} votes</p>
 				<button class="btn btn-bear">Vote</button>
+				{% endfor %}
+				
 			</div>
 			{% endfor %}
 		</div>
