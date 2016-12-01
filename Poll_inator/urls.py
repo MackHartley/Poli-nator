@@ -17,10 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from Poll_R_Bear import views as bear_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', bear_views.index, name='index'),
     url(r'^add_question/', bear_views.add_question, name='add_question'),
     url(r'^add_answer/', bear_views.add_answer, name='add_answer'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

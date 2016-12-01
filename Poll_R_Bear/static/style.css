@@ -14,7 +14,7 @@ nav {
 	float:none;
 }
 
-.question {
+.question-title {
 	padding: 5%;
 	float: left;
 }
@@ -30,6 +30,26 @@ nav {
 	margin-right: 10%;
 	margin-top: 5%;
 	float: right;
+}
+
+.answer-wrapper {
+	padding: 5%;
+	clear: both;
+}
+
+.answer {
+	float: left;
+	display: block;
+	margin-right: 5%;
+}
+
+.answer > * {
+	text-align: center;
+	margin: auto;
+}
+
+.answer img {
+	display: block;
 }
 
 .question > * {
