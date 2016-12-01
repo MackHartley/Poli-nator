@@ -12,14 +12,14 @@ def index(request):
 		answer = Answer.objects.filter(question = q).order_by('-upvotes')[:1]
 		answers.append(answer)
 	context = {'answers': answers}
-	return render(request, 'Poll_R_Bear/index.html', context)
+	return render(request, 'index.html', context)
 
 def question(request, question_id):
 	question = Question.objects.get(id=question_id)
 	answers = Answer.objects.filter(question=question)
 	context = {'question': question,
 				'answers': answers }
-	return render(request, 'Poll_R_Bear/question.html', context)
+	return render(request, 'question.html', context)
 
 @csrf_exempt #TODO ask Shilad what to do about this problem 
 def add_question(request):
