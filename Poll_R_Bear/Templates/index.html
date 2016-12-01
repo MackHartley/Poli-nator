@@ -17,31 +17,15 @@
 	</nav>
 	<div class="content">
 		<div class="questions-list">
+			{% for answer in answers %}
 			<div class="question">
-				<p>First question here</p>
+				<p>{{answer.question}}</p>
+				<p>{{answer.text}}</p>
 				<img src="#" alt="">
+				<p>{{answer.upvotes}} votes</p>
 				<button class="btn btn-bear">Vote</button>
 			</div>
-			<div class="question">
-				<p>First question here</p>
-				<img src="#" alt="">
-				<button class="btn btn-bear">Vote</button>
-			</div>
-			<div class="question">
-				<p>First question here</p>
-				<img src="#" alt="">
-				<button class="btn btn-bear">Vote</button>
-			</div>
-			<div class="question">
-				<p>First question here</p>
-				<img src="#" alt="">
-				<button class="btn btn-bear">Vote</button>
-			</div>
-			<div class="question">
-				<p>First question here</p>
-				<img src="#" alt="">
-				<button class="btn btn-bear">Vote</button>
-			</div>
+			{% endfor %}
 		</div>
 		<button class="btn btn-fancy btn-bear" id="questionCreate">
 			Create A Question
