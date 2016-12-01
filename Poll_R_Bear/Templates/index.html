@@ -25,9 +25,9 @@
 				<p>{{answer.text}}</p>
 				<img src="#" alt="">
 				<p>{{answer.upvotes}} votes</p>
-				<button class="btn btn-bear">Vote</button>
 				{% endfor %}
-				
+
+			<a class="btn btn-bear" href={% url 'question' item.question.id %}>Go Vote</a>
 			</div>
 			{% endfor %}
 		</div>

@@ -10,7 +10,8 @@ def index(request):
 	questions = Question.objects.all()
 	data = []
 	for q in questions:
-		answers = Answer.objects.filter(question = q).order_by('-upvotes')
+		answers = Answer.objects.filter(question = q).order_by('-upvotes')[:3]
+		print(answers)
 		new = {'question': q, 'answers': answers}
 		data.append(new)
 	context = {'data': data}
