@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^question/(?P<question_id>[0-9]+)$', bear_views.question, name="question"),
     url(r'^add_question/', bear_views.add_question, name='add_question'),
     url(r'^add_answer/', bear_views.add_answer, name='add_answer'),
->>>>>>> 2a83031b91dcb9b4a01beaf7ab3fba0abcc6400e
+    url(r'^add_upvote/', bear_views.add_upvote, name='add_upvote'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

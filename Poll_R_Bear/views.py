@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models import F
 
 from .models import Question, Answer
 
@@ -20,7 +21,7 @@ def question(request, question_id):
 	answers = Answer.objects.filter(question=question)
 	context = {'question': question,
 				'answers': answer }
-    return render(request, 'Poll_R_Bear/question.html', context)
+	return render(request, 'Poll_R_Bear/question.html', context)
 
 @csrf_exempt #TODO ask Shilad what to do about this problem 
 def add_question(request):
@@ -40,6 +41,16 @@ def add_answer(request):
 		q = Question.objects.filter(id = question_id)[0]
 		a = Answer(text=answer_text, question=q)
 		a.save()
+		return HttpResponse('success')
+	else: 
+		return HttpResponse('failure')
+
+@csrf_exempt #TODO ask Shilad what to do about this problem 
+def add_upvote(request):
+	if (request.POST and request.POST['answer_id']):
+		answer_id = request.POST['answer_id']
+		Answer.objects.filter(id = answer_id).update(upvotes=F('upvotes')+1)
+		a = Answer.objects.filter(id = answer_id)[0]
 		return HttpResponse('success')
 	else: 
 		return HttpResponse('failure')

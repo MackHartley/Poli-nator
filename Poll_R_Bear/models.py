@@ -13,7 +13,6 @@ class Answer(models.Model):
 	question = models.ForeignKey(Question, on_delete=models.CASCADE)
 	text = models.CharField(max_length=200)
 	upvotes = models.IntegerField(default=0)
-	downvotes = models.IntegerField(default=0)
 	#photo url field
 
 	def __str__(self):
