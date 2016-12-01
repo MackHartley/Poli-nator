@@ -19,7 +19,7 @@ def question(request, question_id):
 	answers = Answer.objects.filter(question=question)
 	context = {'question': question,
 				'answers': answers }
-    return render(request, 'Poll_R_Bear/question.html', context)
+	return render(request, 'Poll_R_Bear/question.html', context)
 
 @csrf_exempt #TODO ask Shilad what to do about this problem 
 def add_question(request):
