@@ -27,7 +27,6 @@
 		{% for answer in answers %}
 		<div class="answer">
 			<p>{{answer.text}}</p>
-			<img src="#" alt="">
 			<button class="btn btn-bear" onclick="upvote({{answer.id}})">Vote</button>
 			<p id="{{answer.id}}">{{answer.upvotes}}</p>
 		</div>
