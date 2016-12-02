@@ -20,12 +20,12 @@
 	<a href='/index/'>
 		<button class="btn btn-bear back"> Back to Questions </button>
 	</a>
-	<h2 class="question-title">
-		{{ question }}
-	</h2>
 	<button type="button" class="btn btn-bear btn-fancy" id="answerCreate" data-toggle="modal" data-target="#create-answer">
 		Add an Answer
 	</button>
+	<h2 class="question-title">
+		{{ question }}
+	</h2>
 	<div class="answer-wrapper">
 		{% for answer in answers %}
 		<div class="answer">
