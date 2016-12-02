@@ -22,6 +22,9 @@
 		</div>
 	</nav>
 	<div class="content">
+		<button class="btn btn-fancy btn-bear" id="questionCreate" data-toggle="modal" data-target="#create-question">
+			Create A Question
+		</button>
 		<div class="questions-list">
 			{% for item in data %}
 			<div class="question container">
@@ -40,9 +43,7 @@
 			</div>
 			{% endfor %}
 		</div>
-		<button class="btn btn-fancy btn-bear" id="questionCreate" data-toggle="modal" data-target="#create-question">
-			Create A Question
-		</button>
+		
 
 		<!-- Modal -->
 		<div id="create-question" class="modal fade" role="dialog">
