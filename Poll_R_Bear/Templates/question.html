@@ -28,7 +28,7 @@
 			<p>{{answer.text}}</p>
 			<img src="#" alt="">
 			<button class="btn btn-bear" onclick="upvote({{answer.id}})">Vote</button>
-			<p>{{answer.upvotes}}</p>
+			<p id="{{answer.id}}">{{answer.upvotes}}</p>
 		</div>
     	{% endfor %} 
 	</div>
@@ -43,6 +43,8 @@
 		 	 dataType: 'json',
 		 	 success: function(response) {
 		 	 	console.log('successfully upvoted');
+		 	 	var idString = '#' + id;
+		 	 	$(idString).html(parseInt($(idString).html(), 10)+1);
 		 	 }
 			});
 		}
