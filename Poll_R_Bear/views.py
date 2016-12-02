@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import F
+import json
 
 from .models import Question, Answer
 
@@ -30,7 +31,7 @@ def add_question(request):
 		question = request.POST['question']
 		q = Question(text=question)
 		q.save()
-		return HttpResponse('success')
+		return HttpResponse(json.dumps({'status': 200}), content_type='application/json')
 	else: 
 		return HttpResponse('failure')
 
@@ -42,7 +43,7 @@ def add_answer(request):
 		q = Question.objects.filter(id = question_id)[0]
 		a = Answer(text=answer_text, question=q)
 		a.save()
-		return HttpResponse('success')
+		return HttpResponse(json.dumps({'status': 200}), content_type='application/json')
 	else: 
 		return HttpResponse('failure')
 
@@ -52,7 +53,7 @@ def add_upvote(request):
 		answer_id = request.POST['answer_id']
 		Answer.objects.filter(id = answer_id).update(upvotes=F('upvotes')+1)
 		a = Answer.objects.filter(id = answer_id)[0]
-		return HttpResponse('success')
+		return HttpResponse(json.dumps({'status': 200}), content_type='application/json')
 	else: 
 		return HttpResponse('failure')
 

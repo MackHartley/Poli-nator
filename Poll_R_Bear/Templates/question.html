@@ -40,14 +40,13 @@
 		 	 type: "POST",
 		 	 url: "../add_upvote/",
 		 	 data: {'answer_id': id},
-		 	 success: upvoteSuccess,
-		 	 dataType: 'json'
+		 	 dataType: 'json',
+		 	 success: function(response) {
+		 	 	console.log('successfully upvoted');
+		 	 }
 			});
 		}
 
-		function upvoteSuccess() {
-			console.log("successfullly upvoted");
-		}
 	</script>
 </body>
 </html>
