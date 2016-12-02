@@ -60,11 +60,12 @@ nav {
 	display: block;
 }
 
-.q-answers {
-	display: inline;
-}
-
 .modal-body input {
 	border: 0;
 	width: 100%;
+}
+
+.back {
+	float: left;
+	margin-left: 5%;
 }
