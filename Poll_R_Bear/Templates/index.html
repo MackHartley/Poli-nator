@@ -58,12 +58,27 @@
 		      	<input id="new-question" type="text" name="new_question" placeholder="What is your favorite bear?"> </input>
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submitQuestion()">Submit</button>
 		      </div>
 		    </div>
 
 		  </div>
 		</div>
 	</div>
+	<script>
+		var submitQuestion = function() {
+			var text = $("#new-question").val();
+			console.log("Text is: " + text)
+			$.ajax({
+		 		type: "POST",
+		 		url: "../add_question/",
+		 		data: {'question': text},
+		 		dataType: 'json',
+		 		success: function(response) {
+		 			console.log('successfully submitted question');
+		 		}
+			});
+		}
+	</script>
 </body>
 </html>
