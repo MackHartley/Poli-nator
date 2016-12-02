@@ -19,7 +19,7 @@ def index(request):
 
 def question(request, question_id):
 	question = Question.objects.get(id=question_id)
-	answers = Answer.objects.filter(question=question)
+	answers = Answer.objects.filter(question=question).order_by('-upvotes')
 	context = {'question': question,
 				'answers': answers }
 	return render(request, 'question.html', context)
