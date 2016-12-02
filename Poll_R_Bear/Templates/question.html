@@ -48,7 +48,7 @@
 		      	<input id="new-answer" type="text" name="new_question" placeholder="Polar Bears"> </input>
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submitAnswer({{question.id}})">Submit</button>
 		      </div>
 		    </div>
 
@@ -71,6 +71,22 @@
 			});
 		}
 
+		function upvoteSuccess() {
+			console.log("successfullly upvoted");
+		}
+
+		var submitAnswer = function(id) {
+			var text = $("#new-answer").val();
+			$.ajax({
+		 		type: "POST",
+		 		url: "../add_answer/",
+		 		data: {'answer': text, 'question_id': id},
+		 		dataType: 'json',
+		 		success: function(response) {
+		 			console.log('successfully submitted answer');
+		 		}
+			});
+		}
 	</script>
 </body>
 </html>
