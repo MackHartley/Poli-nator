@@ -69,14 +69,13 @@
 	<script>
 		var submitQuestion = function() {
 			var text = $("#new-question").val();
-			console.log("Text is: " + text)
 			$.ajax({
 		 		type: "POST",
 		 		url: "../add_question/",
 		 		data: {'question': text},
 		 		dataType: 'json',
 		 		success: function(response) {
-		 			console.log('successfully submitted question');
+		 			location.reload();
 		 		}
 			});
 		}
