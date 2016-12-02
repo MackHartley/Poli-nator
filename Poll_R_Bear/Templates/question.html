@@ -5,6 +5,7 @@
 	{% load static %}
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-fixed">
@@ -26,10 +27,27 @@
 		<div class="answer">
 			<p>{{answer.text}}</p>
 			<img src="#" alt="">
-			<button class="btn btn-bear">Vote</button>
+			<button class="btn btn-bear" onclick="upvote({{answer.id}})">Vote</button>
 			<p>{{answer.upvotes}}</p>
 		</div>
     	{% endfor %} 
 	</div>
+
+	<script type="text/javascript">
+		function upvote(id) {
+			console.log("Upvoting answer number " + id);
+			$.ajax({
+		 	 type: "POST",
+		 	 url: "../add_upvote/",
+		 	 data: {'answer_id': id},
+		 	 success: upvoteSuccess,
+		 	 dataType: 'json'
+			});
+		}
+
+		function upvoteSuccess() {
+			console.log("successfullly upvoted");
+		}
+	</script>
 </body>
 </html>
