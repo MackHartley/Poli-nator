@@ -5,6 +5,12 @@
 	{% load static %}
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+	<script
+	  src="https://code.jquery.com/jquery-3.1.1.min.js"
+	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<nav class="navbar navbar-fixed">
@@ -23,7 +29,6 @@
 
 				{% for answer in item.answers %}
 				<p>{{answer.text}}</p>
-				<img src="#" alt="">
 				<p>{{answer.upvotes}} votes</p>
 				{% endfor %}
 
@@ -31,9 +36,30 @@
 			</div>
 			{% endfor %}
 		</div>
-		<button class="btn btn-fancy btn-bear" id="questionCreate">
+		<button class="btn btn-fancy btn-bear" id="questionCreate" data-toggle="modal" data-target="#create-question">
 			Create A Question
 		</button>
+
+		<!-- Modal -->
+		<div id="create-question" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Create a question:</h4>
+		      </div>
+		      <div class="modal-body">
+		      	<input id="new-question" type="text" name="new_question" placeholder="What is your favorite bear?"> </input>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
 	</div>
 </body>
 </html>

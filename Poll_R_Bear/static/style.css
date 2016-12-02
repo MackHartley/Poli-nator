@@ -55,3 +55,8 @@ nav {
 .question > * {
 	display: inline;
 }
+
+#new-question {
+	border: 0;
+	width: 100%;
+}
