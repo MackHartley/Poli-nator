@@ -24,14 +24,18 @@
 	<div class="content">
 		<div class="questions-list">
 			{% for item in data %}
-			<div class="question">
-				<p>{{item.question.text}}</p>
-
-				{% for answer in item.answers %}
-				<p>{{answer.text}}</p>
-				<p>{{answer.upvotes}} votes</p>
-				{% endfor %}
-
+			<div class="question container">
+				<div class="container">
+					<h3>{{item.question.text}}</h3>
+					<div class="row">
+					{% for answer in item.answers %}
+						<div class='col-md-4'>
+							<p><strong>{{answer.text}}</strong><br/>
+						{{answer.upvotes}} votes</p>
+						</div>
+					{% endfor %}
+					</div>
+				</div>
 			<a class="btn btn-bear" href={% url 'question' item.question.id %}>Go Vote</a>
 			</div>
 			{% endfor %}

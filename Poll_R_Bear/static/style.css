@@ -56,6 +56,14 @@ nav {
 	display: inline;
 }
 
+.question > p {
+	display: block;
+}
+
+.q-answers {
+	display: inline;
+}
+
 .modal-body input {
 	border: 0;
 	width: 100%;
